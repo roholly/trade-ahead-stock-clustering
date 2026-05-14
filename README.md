@@ -5,9 +5,19 @@
 
 ---
 
+## Why This Problem Is Worth Understanding
+
+I have been an investor my entire adult life. This project was an opportunity to go deeper than most investors do — understanding the specific financial metrics that drive investment decisions and seeing how they actually behave across industries when you put them in a model.
+
+Oil and gas in particular: notoriously volatile, capable of spectacular returns when conditions align, and punishing when they don't. The energy sector's profile in this data tells that story clearly. Seeing it surface from the data without telling the model what sector anything was in made it more interesting, not less.
+
+I came out of this project with a clearer framework for conversations with my own financial advisor.
+
+---
+
 ## The Problem
 
-A well-diversified stock portfolio shouldn't move in lockstep. If everything you own reacts the same way to the same market conditions, you haven't actually diversified. But identifying which stocks behave differently from each other across hundreds of companies and dozens of financial metrics is not something you do by hand.
+A well-diversified stock portfolio should not move in lockstep. If everything you own reacts the same way to the same market conditions, you have not actually diversified. But identifying which stocks behave differently from each other across hundreds of companies and dozens of financial metrics is not something you do by hand.
 
 Trade&Ahead, a financial consultancy, provided data on 337 NYSE-listed companies spanning 11 economic sectors. The goal was to group them by shared financial behavior and translate those groups into investor profiles with practical meaning.
 
@@ -17,9 +27,9 @@ Trade&Ahead, a financial consultancy, provided data on 337 NYSE-listed companies
 
 Two clustering methods were applied independently and their results compared.
 
-The first, K-Means, partitions companies into a set number of groups by minimizing the distance between each company and its group center. Testing from 2 to 14 groups, five produced the best balance between statistical validity and practical usefulness. Two groups was technically optimal but analytically useless for portfolio construction.
+K-Means partitions companies into a set number of groups by minimizing the distance between each company and its group center. Testing from 2 to 14 groups, five produced the best balance between statistical validity and practical usefulness. Two groups was technically optimal but analytically useless for portfolio construction.
 
-The second, hierarchical clustering, builds groups by successively merging the most similar companies and works its way up. Several merging strategies were tested. The one with the highest statistical score packed 334 of 337 companies into a single group. The one that produced the most interpretable and balanced grouping was selected instead, even at a lower score. Five groups again.
+Hierarchical clustering builds groups by successively merging the most similar companies and works its way up. Several merging strategies were tested. The one with the highest statistical score packed 334 of 337 companies into a single group. The one that produced the most interpretable and balanced grouping was selected instead, even at a lower score. Five groups again.
 
 Both methods landed on the same five investor archetypes independently.
 
@@ -29,7 +39,7 @@ Both methods landed on the same five investor archetypes independently.
 
 **The Majority** (275 companies): Broadly diversified across sectors, relatively stable, moderate returns. The foundation of most long-term portfolios. Nearly every sector is represented.
 
-**Value Stocks** (9 companies): Household names you'd recognize: JPMorgan, Wells Fargo, AT&T, Verizon, Ford, Coca-Cola, Pfizer, Exxon. Large, stable, inexpensive per share relative to earnings. Low risk, steady long-term growth.
+**Value Stocks** (9 companies): Household names: JPMorgan, Wells Fargo, AT&T, Verizon, Ford, Coca-Cola, Pfizer, Exxon. Large, stable, inexpensive per share relative to earnings. Low risk, steady long-term growth.
 
 **Cash-Rich Growth** (24 companies): Primarily Healthcare and Information Technology. High liquidity, strong earnings per share, and the biggest price appreciation over the analysis period. More expensive per share, but the financials back it up.
 
@@ -47,6 +57,4 @@ No sector labels were used as inputs. The groupings emerged entirely from financ
 
 ## What This Demonstrates
 
-- Translating unsupervised clustering results into actionable business recommendations
-- Selecting methods based on interpretability, not just statistical performance
-- Financial domain fluency applied to a real portfolio construction problem
+The most useful thing this project produced was not the model. It was a framework for thinking about portfolio construction that I can actually use. Understanding why energy stocks cluster the way they do, what makes value stocks different from growth stocks in the data, and where the speculative plays live relative to everything else makes for much better conversations with a financial advisor than "I want to be diversified."
